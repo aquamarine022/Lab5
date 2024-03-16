@@ -42,6 +42,6 @@ public class Coordinates implements Validatable {
     @Override
     public boolean validate() {
         if (x == null) return false;
-        return x<717;
+        return x<718;
     }
 }
