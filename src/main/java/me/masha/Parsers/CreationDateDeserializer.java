@@ -1,4 +1,4 @@
-package me.masha.parsers;
+package me.masha.Parsers;
 
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
@@ -10,15 +10,9 @@ import java.util.Date;
 
 
 public class CreationDateDeserializer implements JsonDeserializer<Long> {
-    /**
-     * @param jsonElement 
-     * @param type
-     * @param jsonDeserializationContext
-     * @return
-     * @throws JsonParseException
-     */
+
     @Override
     public Long deserialize(JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext) throws JsonParseException {
-        return Date.parse(jsonElement.getAsString());
+        return Date.parse(jsonElement.getAsJsonPrimitive().getAsString());
     }
 }

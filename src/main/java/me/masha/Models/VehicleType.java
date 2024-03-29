@@ -1,4 +1,4 @@
-package me.masha.models;
+package me.masha.Models;
 
 /**
  * enum with vehicles names

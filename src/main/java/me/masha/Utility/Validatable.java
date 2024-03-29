@@ -1,4 +1,4 @@
-package me.masha.utility;
+package me.masha.Utility;
 
 /**
  * interface for validatable classes

@@ -1,6 +1,6 @@
-package me.masha.models;
+package me.masha.Models;
 
-import me.masha.utility.Validatable;
+import me.masha.Utility.Validatable;
 
 import java.time.Instant;
 import java.util.Date;

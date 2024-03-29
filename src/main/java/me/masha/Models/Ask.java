@@ -1,9 +1,6 @@
-package me.masha.models;
+package me.masha.Models;
 
-import me.masha.models.Coordinates;
-import me.masha.models.Vehicle;
-import me.masha.models.VehicleType;
-import me.masha.utility.Console;
+import me.masha.Utility.Console;
 
 import java.time.Instant;
 import java.util.Date;

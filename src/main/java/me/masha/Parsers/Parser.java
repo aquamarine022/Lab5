@@ -1,4 +1,4 @@
-package me.masha.parsers;
+package me.masha.Parsers;
 
 import me.masha.Exeptions.InvalidDataException;
 

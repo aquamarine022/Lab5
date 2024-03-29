@@ -1,10 +1,8 @@
-package me.masha.parsers;
+package me.masha.Parsers;
 
 
 import me.masha.Exeptions.InvalidDataException;
-
-
-import java.time.format.DateTimeParseException;
+import me.masha.Models.VehicleType;
 
 /**
  * Class with parsers which are required to read Worker objects
@@ -42,6 +40,16 @@ public class Parsers {
             return Double.parseDouble(s);
         } catch (NumberFormatException e){
             throw new InvalidDataException("Value must be a double!");
+        }
+    };
+    /**
+     * VehicleType parser
+     */
+    public static Parser<VehicleType> statusParser = s -> {
+        try{
+            return VehicleType.valueOf(s);
+        } catch (IllegalArgumentException e){
+            throw new InvalidDataException("VehicleType not found! Please choose value from list!");
         }
     };
 }

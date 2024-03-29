@@ -1,7 +1,7 @@
 package me.masha;
 
-import me.masha.models.*;
-import me.masha.utility.*;
+import me.masha.Models.*;
+import me.masha.Utility.*;
 
 import java.util.ArrayList;
 import java.util.List;

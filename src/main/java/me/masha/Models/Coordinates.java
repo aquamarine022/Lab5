@@ -1,6 +1,6 @@
-package me.masha.models;
+package me.masha.Models;
 
-import me.masha.utility.Validatable;
+import me.masha.Utility.Validatable;
 
 /**
  * Class to operate with coordinates
