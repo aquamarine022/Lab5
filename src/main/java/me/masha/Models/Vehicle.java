@@ -51,7 +51,7 @@ public class Vehicle implements Comparable<Vehicle> {
      * @param capacity - capacity
      * @param vehicleType - vehicleType
      */
-        public Vehicle(int id, String name, java.util.Date creationDate, Coordinates coordinates, Integer enginePower,Long numberOfWheels, Long capacity, VehicleType vehicleType) {
+        public Vehicle(long id, String name, java.util.Date creationDate, Coordinates coordinates, Integer enginePower,Long numberOfWheels, Long capacity, VehicleType vehicleType) {
             this.id = id;
             this.name = name;
             this.creationDate = creationDate;

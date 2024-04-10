@@ -35,11 +35,11 @@ public class Parsers {
     /**
      * Double parser
      */
-    public static Parser<Double> doubleParser = s -> {
+    public static Parser<Float> floatParser = s -> {
         try{
-            return Double.parseDouble(s);
+            return Float.parseFloat(s);
         } catch (NumberFormatException e){
-            throw new InvalidDataException("Value must be a double!");
+            throw new InvalidDataException("Value must be a float!");
         }
     };
     /**

@@ -8,7 +8,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 import static me.masha.Constants.formatter;
-
+//TODO
 
 public class CollectionManager {
     private ArrayDeque<Vehicle> collection;

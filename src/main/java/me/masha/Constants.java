@@ -3,6 +3,7 @@ package me.masha;
 import java.text.SimpleDateFormat;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
+import java.util.Stack;
 
 public class Constants {
     /**
@@ -10,4 +11,8 @@ public class Constants {
      *
      */
     public static final SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+
+    public static boolean SCRIPT_MODE = false;
+
+    public static Stack<String> scriptStack = new Stack<>();
 }
