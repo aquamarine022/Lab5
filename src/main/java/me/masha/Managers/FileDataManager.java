@@ -10,8 +10,8 @@ import me.masha.Parsers.*;
 
 import java.io.*;
 import java.lang.reflect.Type;
+import java.util.ArrayDeque;
 import java.util.Date;
-import java.util.PriorityQueue;
 
 public class FileDataManager {
     /**
@@ -42,14 +42,15 @@ public class FileDataManager {
      * @param data collection to write
      * @throws IOException in case there are errors while writing
      */
-    public void writeTofile(PriorityQueue<Vehicle> data) throws IOException {
-        OutputStreamWriter outputStreamWriter = new OutputStreamWriter(new FileOutputStream(file));
-        Type dataType = new TypeToken<PriorityQueue<Vehicle>>(){}.getType();
+    public void writeToFile(ArrayDeque<Vehicle> data) throws IOException {
+        FileWriter fileWriter = new FileWriter(file);
+        Type dataType = new TypeToken<ArrayDeque<Vehicle>>() {}.getType();
         String output = this.gson.toJson(data, dataType);
-        outputStreamWriter.write(output);
-        outputStreamWriter.flush();
-        outputStreamWriter.close();
+        fileWriter.write(output);
+        fileWriter.flush();
+        fileWriter.close();
     }
+
 
     /**
      * Method to read data from file
@@ -57,9 +58,9 @@ public class FileDataManager {
      * @throws IOException in case there are errors while reading
      * @throws JsonParseException in case there are troubles with deserializing
      */
-    public PriorityQueue<Vehicle> readJSON() throws IOException, JsonParseException {
+    public ArrayDeque<Vehicle> readJSON() throws IOException, JsonParseException {
         InputStreamReader inputStreamReader = new InputStreamReader(new FileInputStream(file));
-        Type dataType = new TypeToken<PriorityQueue<Vehicle>>(){}.getType();
+        Type dataType = new TypeToken<ArrayDeque<Vehicle>>(){}.getType();
         return this.gson.fromJson(new JsonReader(inputStreamReader), dataType);
     }
 }

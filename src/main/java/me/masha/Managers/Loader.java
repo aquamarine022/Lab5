@@ -8,8 +8,10 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-
 public class Loader {
+    /**
+     * method to load file by its path
+     */
     public Loader(){}
     public File loadFile(String filePath, String extension, String permissions, String fileName) throws FileNotFoundException {
         Path path = Paths.get(filePath);

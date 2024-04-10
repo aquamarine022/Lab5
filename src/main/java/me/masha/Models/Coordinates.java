@@ -1,11 +1,9 @@
 package me.masha.Models;
 
-import me.masha.Utility.Validatable;
-
 /**
  * Class to operate with coordinates
  */
-public class Coordinates implements Validatable {
+public class Coordinates implements Comparable<Coordinates> {
      /**
      *Coordinate x
      *Max value: 717, Can't be null
@@ -27,6 +25,22 @@ public class Coordinates implements Validatable {
         }
 
     /**
+     * Method to get x coordinate
+     * @return x coordinate
+     */
+    public int getX() {
+        return x;
+    }
+
+    /**
+     * Method to get y coordinate
+     * @return y coordinate
+     */
+    public float getY() {
+        return y;
+    }
+
+    /**
      * Method to get formatted string representation of coordinate
      * @return String value
      */
@@ -35,13 +49,8 @@ public class Coordinates implements Validatable {
         return x + ";" + y;
     }
 
-    /**
-     * Checker of correct values
-     * @return true if value is correct and false if incorrect
-     */
     @Override
-    public boolean validate() {
-        if (x == null) return false;
-        return x<=717;
+    public int compareTo(Coordinates o) {
+        return (int) (((this.x * this.x) + (this.y * this.y)) - ((o.x * o.x) + (o.y * o.y)));
     }
 }

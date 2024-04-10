@@ -6,13 +6,23 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonParseException;
 
 import java.lang.reflect.Type;
+import java.text.ParseException;
 import java.util.Date;
 
+import static me.masha.Constants.formatter;
 
-public class CreationDateDeserializer implements JsonDeserializer<Long> {
+/**
+ * deserializer to parse java.util.Date from Json files
+ */
+public class CreationDateDeserializer implements JsonDeserializer<Date> {
 
     @Override
-    public Long deserialize(JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext) throws JsonParseException {
-        return Date.parse(jsonElement.getAsJsonPrimitive().getAsString());
+    public Date deserialize(JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext) throws JsonParseException {
+        try {
+            String dateString = jsonElement.getAsString();
+            return formatter.parse(dateString);
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

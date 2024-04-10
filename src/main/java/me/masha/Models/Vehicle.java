@@ -1,14 +1,12 @@
 package me.masha.Models;
 
-import me.masha.Utility.Validatable;
-
-import java.time.Instant;
+import java.util.Comparator;
 import java.util.Date;
 
 /**
  * Class to operate with vehicle
  */
-public class Vehicle implements Validatable {
+public class Vehicle implements Comparable<Vehicle> {
     /**
      * Vehicle's id, must be greater than 0, must be unique, must be generated automatically
      */
@@ -65,22 +63,72 @@ public class Vehicle implements Validatable {
         }
 
     /**
-     * constructor to generate creationDate
+     * Method to get id
+     * @return id
      */
-        public Vehicle(int id, String name, Coordinates coordinates, Integer enginePower,Long numberOfWheels, Long capacity, VehicleType vehicleType) {
-            this(id, name, Date.from(Instant.now()), coordinates, enginePower, numberOfWheels, capacity, vehicleType);
-        }
-
+    public Long getId() {
+        return id;
+    }
     /**
-     * Checker of correct values
-     * @return true if value is correct and false if incorrect
+     * Method to set id
+     * @param id new id
      */
-    public boolean validate() {
-            if (id <= 0) return false;
-            if (name == null || name.isEmpty()) return false;
-            if (creationDate == null) return false;
-            if (coordinates == null || !coordinates.validate()) return false;
-            return true;
+    public void setId(long id) {
+        this.id = id;
+    }
+    /**
+     * Method to get name
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
+    /**
+     * Method to get coordinates
+     * @return coordinates
+     */
+    public Coordinates getCoordinates() {
+        return coordinates;
+    }
+    /**
+     * Method to get creation date
+     * @return creation date
+     */
+    public Date getCreationDate() {
+        return creationDate;
+    }
+    /**
+     * Method to get vehicle type
+     * @return vehicle type
+     */
+    public VehicleType getVehicleType(){
+            return type;
+    }
+    /**
+     * Method to get engine power
+     * @return engine power
+     */
+    public Integer getEnginePower(){
+            return enginePower;
+    }
+    /**
+     * Method to get number of wheels
+     * @return number of wheels
+     */
+    public Long getNumberOfWheels(){
+            return numberOfWheels;
+    }
+    /**
+     * Method to get capacity
+     * @return capacity
+     */
+    public Long getCapacity(){
+            return capacity;
+    }
+
+    @Override
+    public int compareTo(Vehicle o) {
+        return this.coordinates.compareTo(o.getCoordinates());
     }
 
     /**
