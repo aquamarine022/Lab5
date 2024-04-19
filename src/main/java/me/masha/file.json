@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1,
+    "name": "sdf",
+    "coordinates": {
+      "x": 12,
+      "y": 12.0
+    },
+    "creationDate": "2024-04-19 20:40:02",
+    "enginePower": 12,
+    "numberOfWheels": 12,
+    "capacity": 12,
+    "type": "CAR"
+  },
+  {
+    "id": 2,
+    "name": "wer",
+    "coordinates": {
+      "x": 45,
+      "y": 33.0
+    },
+    "creationDate": "2024-04-19 20:40:23",
+    "enginePower": 44,
+    "numberOfWheels": 4,
+    "capacity": null,
+    "type": null
+  }
+]

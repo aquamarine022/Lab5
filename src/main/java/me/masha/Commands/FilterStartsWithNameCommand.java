@@ -1,10 +1,8 @@
 package me.masha.Commands;
 
-import me.masha.Constants;
 import me.masha.Exeptions.InvalidDataException;
 import me.masha.Exeptions.WrongArgsException;
 import me.masha.Managers.CollectionManager;
-import me.masha.Managers.FileDataManager;
 import me.masha.Models.VehicleReader;
 import me.masha.Utility.Console;
 
@@ -31,6 +29,6 @@ public class FilterStartsWithNameCommand extends Commands{
 
     @Override
     public void initCommandArgs(String[] commandArgs) throws WrongArgsException {
-        if(commandArgs.length != 0) throw new WrongArgsException("Wrong amount of arguments!", 1, commandArgs.length);
+        if(commandArgs.length != 0) throw new WrongArgsException("Wrong amount of arguments!", 0, commandArgs.length);
     }
 }

@@ -1,10 +1,7 @@
 package me.masha;
 
 import me.masha.Commands.Commands;
-import me.masha.Managers.CollectionManager;
-import me.masha.Managers.CommandsManager;
-import me.masha.Managers.FileDataManager;
-import me.masha.Managers.Loader;
+import me.masha.Managers.*;
 import me.masha.Models.Vehicle;
 import me.masha.Models.VehicleReader;
 import me.masha.Utility.Console;
@@ -70,6 +67,7 @@ public class Main {
 
     private static ArrayDeque<Vehicle> loadData(String fileName){
         ArrayDeque<Vehicle> data = null;
+
         File dataFile = null;
         try {
             dataFile = new Loader().loadFile(fileName, "json", "rw", "data file");
@@ -81,8 +79,8 @@ public class Main {
         data = fileDataManager.readJSON();
         } catch (Exception e) {
             Console.getInstance().printError(e.getMessage());
-            //Console.getInstance().printError("Data file reading error!");
-            //System.exit(0);
+            Console.getInstance().printError("Data file reading error!");
+            System.exit(0);
         }
         if (data==null) data = new ArrayDeque<>();
         if(!CollectionManager.isValid(data)){

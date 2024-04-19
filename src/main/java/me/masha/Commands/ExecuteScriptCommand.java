@@ -43,6 +43,7 @@ public class ExecuteScriptCommand extends Commands{
     }
     @Override
     public void initCommandArgs(String[] commandArgs) throws WrongArgsException {
-        if(commandArgs.length != 0) throw new WrongArgsException("Wrong amount of arguments!", 1, commandArgs.length);
+        if(commandArgs.length != 1) throw new WrongArgsException("Wrong amount of arguments!", 1, commandArgs.length);
+        this.scriptFilePath = commandArgs[0];
     }
 }

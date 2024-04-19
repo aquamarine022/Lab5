@@ -1,6 +1,5 @@
 package me.masha.Commands;
 
-import me.masha.Exeptions.InvalidDataException;
 import me.masha.Exeptions.WrongArgsException;
 import me.masha.Managers.CommandsManager;
 import me.masha.Utility.Console;

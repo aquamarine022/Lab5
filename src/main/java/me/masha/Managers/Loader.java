@@ -12,7 +12,7 @@ public class Loader {
     /**
      * method to load file by its path
      */
-    public Loader(){}
+
     public File loadFile(String filePath, String extension, String permissions, String fileName) throws FileNotFoundException {
         Path path = Paths.get(filePath);
         if(!Files.exists(path)){

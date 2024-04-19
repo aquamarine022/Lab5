@@ -4,7 +4,6 @@ import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
 
 import com.google.gson.stream.JsonReader;
-import me.masha.Constants;
 import me.masha.Models.Vehicle;
 import me.masha.Parsers.*;
 
@@ -34,7 +33,7 @@ public class FileDataManager {
         gsonBuilder.registerTypeAdapter(Date.class, new CreationDateDeserializer());
         gsonBuilder.registerTypeAdapter(Date.class, new CreationDateSerializer());
 
-        this.gson = gsonBuilder.registerTypeAdapter(Date.class, Constants.formatter).serializeNulls().setPrettyPrinting().create();
+        this.gson = gsonBuilder.serializeNulls().setPrettyPrinting().create();
     }
 
     /**

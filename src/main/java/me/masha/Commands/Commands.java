@@ -1,5 +1,5 @@
 package me.masha.Commands;
-//todo
+
 import me.masha.Exeptions.InvalidDataException;
 import me.masha.Exeptions.WrongArgsException;
 

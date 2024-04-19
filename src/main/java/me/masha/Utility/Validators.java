@@ -94,7 +94,7 @@ public class Validators {
     };
     public static Validator<VehicleType> vehicleTypeValidator = new Validator<VehicleType>() {
         @Override
-        public void validate(VehicleType value) throws InvalidDataException {
+        public void validate(VehicleType value){
             if(value == null) return;
         }
     };

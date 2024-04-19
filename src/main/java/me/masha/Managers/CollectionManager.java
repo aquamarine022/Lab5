@@ -8,7 +8,6 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 import static me.masha.Constants.formatter;
-//TODO
 
 public class CollectionManager {
     private ArrayDeque<Vehicle> collection;
@@ -52,10 +51,6 @@ public class CollectionManager {
 
     public ArrayDeque<Vehicle> getCollection(){
         return this.collection;
-    }
-
-    public Date getCreationDate(){
-        return this.creationDate;
     }
 
     public boolean containsId(long id){
