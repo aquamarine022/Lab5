@@ -76,11 +76,11 @@ public class Main {
         } catch (FileNotFoundException e){
             Console.getInstance().printError(e.getMessage());
         }
-       // fileDataManager = new FileDataManager(dataFile);
+        fileDataManager = new FileDataManager(dataFile);
         try {
         data = fileDataManager.readJSON();
         } catch (Exception e) {
-            //Console.getInstance().printError(e.getMessage());
+            Console.getInstance().printError(e.getMessage());
             //Console.getInstance().printError("Data file reading error!");
             //System.exit(0);
         }
