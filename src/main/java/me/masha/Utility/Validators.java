@@ -88,6 +88,7 @@ public class Validators {
     public static Validator<Long> capacityValidator = new Validator<Long>() {
         @Override
         public void validate(Long value) throws InvalidDataException {
+            if(value == null) return;
             if(value <= 0) throw new InvalidDataException("Capacity must be greater than zero!");
         }
     };

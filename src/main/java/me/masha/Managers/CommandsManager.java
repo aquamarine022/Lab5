@@ -1,11 +1,8 @@
 package me.masha.Managers;
 
-import me.masha.Commands.Command;
-import me.masha.Commands.Commands;
-import me.masha.Commands.HelpCommand;
+import me.masha.Commands.*;
 import me.masha.Exeptions.InvalidDataException;
 import me.masha.Exeptions.WrongArgsException;
-import me.masha.Models.Vehicle;
 import me.masha.Models.VehicleReader;
 
 import java.util.ArrayList;
@@ -17,7 +14,23 @@ public class CommandsManager {
 
     public CommandsManager(CollectionManager collectionManager, VehicleReader vehicleReader, FileDataManager fileDataManager){
         this.commandsList = new ArrayList<>(Arrays.asList(
-                new HelpCommand(this)
+                new HelpCommand(this),
+                new InfoCommand(collectionManager),
+                new ShowCommand(collectionManager),
+                new AddCommand(vehicleReader, collectionManager),
+                new UpdateByIdCommand(vehicleReader, collectionManager),
+                new RemoveByIdCommand(collectionManager),
+                new ClearCommand(collectionManager),
+                new SaveCommand(collectionManager, fileDataManager),
+                new ExecuteScriptCommand(),
+                new ExitCommand(collectionManager),
+                new RemoveHeadCommand(collectionManager),
+                new AddIfMaxCommand(vehicleReader,collectionManager),
+                new AddIfMinCommand(vehicleReader,collectionManager),
+                new RemoveAnyByEnginePowerCommand(collectionManager),
+                new MinByNameCommand(collectionManager),
+                new FilterStartsWithNameCommand(vehicleReader,collectionManager)
+
         ));
     }
     public ArrayList<Command> getCommandsList() {

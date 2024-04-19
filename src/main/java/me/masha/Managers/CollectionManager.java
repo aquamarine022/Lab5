@@ -63,6 +63,11 @@ public class CollectionManager {
         return this.collection.stream().anyMatch(vehicle -> vehicle.getId() == id);
     }
 
+    public boolean containsEnginePower(int engine_power){
+        if (this.collection.isEmpty()) return false;
+        return this.collection.stream().anyMatch(vehicle -> vehicle.getEnginePower() == engine_power);
+    }
+
     public String getInfo(){
         return "Type: " + this.collection.getClass().getName() +
                 "\nCreation date: " + formatter.format(this.creationDate) +

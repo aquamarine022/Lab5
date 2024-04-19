@@ -33,8 +33,8 @@ public abstract class Commands implements Command {
     @Override
     public boolean equals(Object o){
         if(this == o) return true;
-        if (!(o instanceof Commands commands)) return false;;
-        return Objects.equals(name, commands.name) && Objects.equals(args, commands.args) && Objects.equals(description, commands.description);
+        if (!(o instanceof Commands command)) return false;
+        return Objects.equals(name, command.name) && Objects.equals(args, command.args) && Objects.equals(description, command.description);
     }
 
     @Override

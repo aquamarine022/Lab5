@@ -55,7 +55,8 @@ public class VehicleReader extends ValueReader{
     }
 
     public Long readCapacity() throws InvalidDataException {
-        return readValue("capacity", Validators.capacityValidator, Parsers.longParser);
+        return readValue("capacity", Validators.capacityValidator,
+                Parsers.longParser == null ? null : Parsers.longParser);
     }
 
     public VehicleType readVehicleType() throws InvalidDataException {
