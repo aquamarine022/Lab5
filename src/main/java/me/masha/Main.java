@@ -87,7 +87,7 @@ public class Main {
             Console.getInstance().printError("Data file is not valid!");
             System.exit(0);
         }
-        Console.getInstance().printLn("Data loaded successfully!");
+        Console.getInstance().printLn("Data loaded successfully!\nPrint help to see all commands");
         return data;
     }
 }

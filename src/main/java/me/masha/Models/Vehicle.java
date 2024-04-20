@@ -136,13 +136,13 @@ public class Vehicle implements Comparable<Vehicle> {
      */
     @Override
     public String toString() {
-        return "vehicle{\"id\": " + id + ", " +
-            "\"name\": \"" + name + "\", " +
-            "\"creationDate\": \"" + creationDate + "\", " +
-            "\"coordinates\": \"" + coordinates + "\", " +
-            "\"enginePower\": \"" + enginePower + "\", " +
-            "\"numberOfWheels\": \"" + (numberOfWheels == null ? "null" : "\""+numberOfWheels+"\"") + "\", " +
-            "\"capacity\": \"" + (capacity == null ? "null" : "\""+capacity+"\"") + "\", " +
+        return "vehicle{\"id\": " + id + ", \n" +
+            "\"name\": \"" + name + "\", \n" +
+            "\"creationDate\": \"" + creationDate + "\",\n" +
+            "\"coordinates\": \"" + coordinates + "\",\n" +
+            "\"enginePower\": \"" + enginePower + "\",\n" +
+            "\"numberOfWheels\": \"" + (numberOfWheels == null ? "null" : "\""+numberOfWheels+"\"") + "\", \n" +
+            "\"capacity\": \"" + (capacity == null ? "null" : "\""+capacity+"\"") + "\", \n" +
             "\"vehicleType\": " + (type == null ? "null" : "\""+type+"\"") + "}";
         }
     }
